@@ -1,0 +1,24 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.topic {
+    color:#FC0;
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: normal;
+}
+.title {
+    font-size: rem(55);
+    font-weight: 600;
+    line-height: normal;
+}
+
+.text {
+    margin-top: rem(16);
+    font-size: 17px;
+    font-weight: 400;   
+    line-height: normal;
+
+    &--bold {
+        font-size: rem(26);
+        font-weight: 600;   
+    }
+}
