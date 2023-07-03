@@ -199,9 +199,12 @@ color: #fff;
             top: -100%;
         }
     }
+    img{
+        max-width: 100%;
+    }
 }
 
-// ======================================================outlet
+// ======================================================delivery
 
 
 .delivery {
@@ -210,15 +213,12 @@ color: #fff;
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-
-    &__main {
-    }
-
-    &__about {
-    }
-
-    &__uptitle {
+        @media (max-width:1250px){
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
     }
 
     &__title {
@@ -229,7 +229,22 @@ color: #fff;
             width: rem(175);
             height: 5px;
             background-color: #FFCC00;
-            bottom: 0;left: 0;
+            bottom: 0;
+            left: 0;
+        }
+        @media (max-width:1250px){
+            &:before{
+                content: "";
+                background-color: #FFCC00;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        @media (max-width:$mobile){
+            &:before{
+                bottom: -10%;
+            }
         }
     }
 
@@ -240,12 +255,25 @@ color: #fff;
         column-gap: rem(30);
         margin-top: rem(57);
         padding-bottom: rem(70);
+        @media (max-width:1250px){
+           justify-content: space-around;
+        }
+        @media (max-width:580px){
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(50);
+         }
     }
 
     &__item {
     }
 
     &__image {
+        img{
+            @media (max-width:1250px){
+                max-width: 100%;
+             }
+        }
     }
 }
 
@@ -253,6 +281,7 @@ color: #fff;
 
     &__image {
         margin-bottom: rem(19);
+       
     }
 
     &__title {
@@ -279,6 +308,7 @@ color: #fff;
 
     &__about {
         margin-block: rem(50) rem(109);
+       
     }
 
     &__uptitle {
@@ -302,6 +332,15 @@ color: #fff;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width:1250px){
+            display: grid;
+            grid-template-columns: repeat(2 , 1fr);
+            justify-content: center;
+            row-gap: rem(30);
+         }
+         @media (max-width:635px){
+            grid-template-columns: repeat(1 , 1fr);
+         }
     }
 
     &__worker {
@@ -312,6 +351,9 @@ color: #fff;
 
     &__image {
         margin-bottom: rem(37);
+        @media (max-width:1250px){
+            margin-bottom:rem(10);
+          }
     }
 
     &__name {
@@ -319,6 +361,9 @@ color: #fff;
         font-weight: 600;
         line-height: normal;
         margin-bottom: rem(13);
+        @media (max-width:1250px){
+           margin-bottom: rem(5);
+         }
         
     }
 
@@ -340,10 +385,15 @@ color: #fff;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        @media (max-width:935px){
+            flex-direction: column;
+            text-align: center;
+            row-gap: rem(75);
+         }
     }
 
     &__text {
-        
+     
     }
 
     &__title {
@@ -363,6 +413,13 @@ color: #fff;
         align-items: center;
         column-gap: rem(12);
         cursor: pointer;
+        @media (max-width:935px){
+            justify-content: space-around;
+         }
+         @media (max-width:400px){
+           flex-direction: column;
+           row-gap: rem(25);
+         }
     }
 
     &__button {
@@ -370,6 +427,7 @@ color: #fff;
         height: 55px;
         border-radius: 5px;
         overflow: hidden;
+       
     }
 
     &__google {
@@ -379,6 +437,11 @@ color: #fff;
     }
 
     &__image {
+      
+        margin: 0 auto;
+        img{
+            width: 100%;
+        }
     }
 }
 // ======================================================partners
@@ -394,6 +457,20 @@ margin-bottom: rem(75);
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width:1125px){
+            display: grid;
+            grid-template-columns: repeat(2 , rem(278));
+            justify-content: center;
+            gap: rem(35);
+            
+         }
+         @media (max-width:620px){
+            display: grid;
+            grid-template-columns: repeat(1 , rem(278));
+            justify-content: center;
+            row-gap: rem(75);
+            
+         }
     }
 
     &__item {
