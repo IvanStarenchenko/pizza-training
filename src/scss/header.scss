@@ -3,15 +3,14 @@
 //====================================================================================================
 
 //Burger
-/*
+
 .icon-menu {
-	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
-		width: rem(30);
-		height: rem(18);
-		z-index: 5;
+		width: 40px;
+		height: rem(22.5);
+		z-index: 10;
 		@media (any-hover: none) {
 			cursor: default;
 		}
@@ -24,7 +23,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0;
@@ -53,18 +52,74 @@
 		}
 	}
 }
-*/
+.menu{
+	
+	@media (max-width: $tablet) {
+		display: flex;
+		justify-content: flex-end;
+		flex: 1 1 auto;
+	}
+	&__body{
+		@media (max-width: $tablet) {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: -100%;
+			overflow:auto;
+			background-color: #000;
+			padding: rem(100) rem(15) rem(50) rem(15);
+			z-index: 4;
+			transition: left 0.3s ease 0s;
+			&::before{
+				content: "";
+				position: fixed;
+				width: 100%;
+				height: 70px;
+				left: -100%;
+				top: 0;
+				background-color: #000;
+			}
+			.menu-open &{
+				left: 0;
+				&::before{
+					left: 0;
+				}
+			}
+		} 
+	}
+
+
+
+	&__icon {
+		
+	}
+}
+
 .header {
 background: url("@img/hero/back.png");
 background-size: cover;
 background-repeat: no-repeat;
+background-position: center;
 height: 100vh;
 margin-bottom: rem(195);
 padding-top: rem(45);
 color: #FFF;
-	&__container {
-		
-	}
+@media (max-width:991.98px) {
+	margin-bottom: rem(85);
+
+}
+@media (max-width:520px) {
+	flex-direction: column;
+	row-gap: rem(25);
+	height: 120vh;
+}
+@media (max-width:345px) {
+	flex-direction: column;
+	row-gap: rem(25);
+	height: 125vh;
+
+}
 	&__top{
 		display: flex;
 		align-items: center;
@@ -74,10 +129,12 @@ color: #FFF;
 		flex: 1 1 auto;
 		text-transform: uppercase;
 		font-size: rem(18);
+		@media (max-width:991.98px) {
+			text-align:  center;
+			font-size: rem(28);
+		}
 	}
 
-	&__navigation {
-	}
 
 	&__list {
 		display: flex;
@@ -108,22 +165,29 @@ color: #FFF;
 		
 	}
 
-	&__link {
-	}
-
 	&__btn {
 		padding: rem(14) rem(45);
 		background-color:#FFCC00;
 		font-size: rem(14);
 		cursor: pointer;
+		@media (max-width:991.98px) {
+			margin: 0 auto;
+		}
 	}
 	&__bottom {
 		display: flex;
 		flex-direction: column;
+		@media (max-width:991.98px) {
+			text-align: center;
+		}
 		.header__btn{
 			margin-top: rem(105);
 			max-width: rem(200);
+			@media (max-width:620px) {
+				margin-top: rem(50);
+			}
 		}
+		
 	}
 
 	&__price {
@@ -134,25 +198,38 @@ color: #FFF;
 	&__title {
 		font-size: rem(64);
 		font-weight: 600;
-		margin-bottom: rem(55);
-	}
+		margin-bottom: rem(55);	
+		@media (max-width:520px) {
+			font-size: rem(54);
 
-	&__discount {
+		
+		}
+	}
+	@media (max-width:620px) {
+		text-align: center;
 	}
 }
 
 .discount-header {
-display: flex;
-align-items: center;
-column-gap: rem(55);
+	display: flex;
+	align-items: center;
+	column-gap: rem(55);
+
+	@media (max-width:991.98px) {
+		justify-content: center;
+	}
+	@media (max-width:520px) {
+		flex-direction: column;
+		row-gap: rem(25);
+	}
 	&__img {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		line-height: normal;	
-		width: rem(205);
-		height: rem(205);
+		min-width: rem(205);
+		min-height: rem(205);
 		background-color: #FFCC00;
 		border-radius: 50%;
 		font-size: rem(31);
@@ -168,5 +245,11 @@ column-gap: rem(55);
 		font-size:rem(36);
 		font-weight: 600;
 		line-height: normal;
+		@media (max-width:620px) {
+			flex-direction: column;
+			row-gap: rem(45);
+			text-align: center;
+
+		}
 	}
 }

@@ -9,6 +9,12 @@
     font-size: rem(55);
     font-weight: 600;
     line-height: normal;
+    @media (max-width: $tablet) {
+       font-size: rem(46);
+    }
+    @media (max-width: $mobile) {
+        font-size: rem(38);
+     }
 }
 
 .text {

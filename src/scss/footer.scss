@@ -2,18 +2,33 @@
 .footer {
 
     &__container {
-        padding: rem(90) rem(0) rem(44) rem(0);
+        padding: rem(90) rem(10) rem(44) rem(10);
 
     }
     &__top{
         display: flex;
         justify-content: space-between;
+        row-gap: rem(105);
+      @media (max-width:1000px) {
+        display: grid;
+        grid-template-columns: repeat(2 , rem(250));
+        text-align: center;
+        justify-content: space-around;
+      }
+      @media (max-width:1000px) {
+        grid-template-columns: repeat(1, rem(250));
+        }
     }
 
     &__info {
         .footer__title{
             text-transform: uppercase;
             color: #FFCC00;
+        }
+        @media (max-width:1000px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 
@@ -22,6 +37,7 @@
         font-size: rem(24);
         font-weight: 600;
         line-height: normal;
+      
     }
 
     &__subtitle {
@@ -45,9 +61,11 @@
         display: flex;
         flex-direction: column;
         row-gap: rem(13);
+       
     }
 
     &__item {
+       
         font-size: rem(17);
         font-weight: 400;
         line-height: normal;
@@ -56,23 +74,20 @@
         }
     }
 
-    &__link {
-    }
-
-    &__menu {
-    }
-
-    &__location {
-    }
-
     &__bottom{
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         margin-top: rem(187);
         font-size: rem(18);
         font-weight: 400;
         line-height: normal;
+        column-gap: rem(15);
+        @media (max-width:590px) {
+          justify-content: center;
+          align-items: center;
+        }
     }
 }
 
